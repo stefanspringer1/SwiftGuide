@@ -26,7 +26,7 @@ _All instructions and information are without any guarantee._
 - to simplify the installations, it is recommended to use the **Windows Package Manager**
 - for developer mode: _more precisely:_ the **privilege for setting symbolic links** (SeCreateSymbolicLinkPrivilege) is required (and activating developer mode is only one possible way to get there), see https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/create-symbolic-links; Test by using the "mklink" command in the command line
 - note that the installation of the actual **Swift Toolchain** requires admin rights, especially _because additions are made to the Visual Studio installation_ (in `"%UniversalCRTSdkDir%\Include` and in `%VCToolsInstallDir%\include `, the two included environment variables are set in the x64 Native Tools Command Prompt of Visual Studio); other installation parts are installed to `%SystemDrive%\Library` and to `%PROGRAMFILES%\swift`, and the value of the PATH environment variable becomes two corresponding paths added
-- IDE: **Visual Studio Code** with the [Swift extension](https://marketplace.visualstudio.com/items?itemName=sswg.swift-lang), useful settings for Visual Studio Code see in the section "Settings for Visual Studio Code" below; see also [VS Code Swift extension lesser known features](https://opticalaberration.com/2022/11/vscode-features.html), there e.g. "Local editing of packages" (important for the simultaneous further development of dependent packages); _There should only be one Visual Studio installation (as of early 2023),_ and important tools such as Git must also be accessible outside of Visual Studio's "x64 Native Tools Command Prompt".
+- IDE: **Visual Studio Code** with the [Swift extension](https://marketplace.visualstudio.com/items?itemName=sswg.swift-lang), useful settings for Visual Studio Code see in the section "Suggested settings for Visual Studio Code" below; see also [VS Code Swift extension lesser known features](https://opticalaberration.com/2022/11/vscode-features.html), there e.g. "Local editing of packages" (important for the simultaneous further development of dependent packages); _There should only be one Visual Studio installation (as of early 2023),_ and important tools such as Git must also be accessible outside of Visual Studio's "x64 Native Tools Command Prompt".
 
 #### Distribution of compiled programs under Windows
 
@@ -52,7 +52,7 @@ _All instructions and information are without any guarantee._
 - first steps with Swift: see Windows
 - The Swift runtime (Swift standard libraries) is part of the operating system on Apple platforms (this is possible because of the stable ABI already implemented there), so new features (language or standard libraries) may only be available there with new operating system versions and you sometimes have to use [`#available` annotations](https://www.avanderlee.com/swift/available-deprecated-renamed/) (for individual components, see also [the official Swift documentation](https ://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes/)) or (in the configuration for the package manager, for the whole package) with the [`platforms` flag ](https://github.com/apple/swift-package-manager/blob/main/Documentation/PackageDescription.md#package) (note: restrictions according to `platforms` only for platforms mentioned there)
 
-## Settings for Visual Studio Code
+## Suggested settings for Visual Studio Code
 
 ### Detect encoding
 
