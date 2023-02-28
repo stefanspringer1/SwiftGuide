@@ -41,7 +41,7 @@ _All instructions and information are without any guarantee._
 - a credential manager must be activated for Git if the Swift Package Manager needs to pull packages from private repositories
 - IDE: like Windows
 - first steps with Swift: see Windows
-- Static linking via addition to the build command `-Xswiftc -static-executable` (everything) or `-Xswiftc -static-stdlib` (Swift standard libraries only)
+- static linking via addition to the build command `-Xswiftc -static-executable` (everything) or `-Xswiftc -static-stdlib` (Swift standard libraries only)
 - note the license questions mentioned under "Windows".
 
 ### macOS
