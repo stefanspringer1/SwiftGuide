@@ -31,7 +31,7 @@ _All instructions and information are without any guarantee._
 
 [^1]: For Swift versions older than 5.4.2, the Swift Toolchain installater also copies some files into the Visual Studfio installation: it copies `%SDKROOT%\usr\share\ucrt.modulemap` to `%UniversalCRTSdkDir%\Include\%UCRTVersion%\ucrt\module.modulemap`, `%SDKROOT%\usr\share\visualc.modulemap` to `%VCToolsInstallDir%\include\module.modulemap`, `%SDKROOT%\usr\share\visualc.apinotes` to `%VCToolsInstallDir%\include\visualc.apinotes`, and `%SDKROOT%\usr\share\winsdk.modulemap` to `%UniversalCRTSdkDir%\Include\%UCRTVersion%\um\module.modulemap`, where the environment variables `UniversalCRTSdkDir`, `VCToolsInstallDir`, and `UCRTVersion` are set within the x64 Native Tools Command Prompt of Visual Studio, and `SDKROOT` should be set to point to `%SystemDrive%\Library\Developer\Platforms\Windows.platform\Developer\SDKs\Windows.sdk\usr\share` for the standard installation.
 
-[^2]: and copying some files into the Visual Studio installation for Swift older than 5.4.2 see other footnote
+[^2]: Swift older than 5.4.2, you also need to copy some files into the Visual Studio installation, cf. the other footnote.
 
 #### Distribution of compiled programs under Windows
 
