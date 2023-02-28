@@ -25,8 +25,18 @@ _All instructions and information are without any guarantee._
 - **Python** is also used to configure the LLVM debugger and is therefore necessary for debugging
 - to simplify the installations, it is recommended to use the **Windows Package Manager**
 - for developer mode: _more precisely:_ the **privilege for setting symbolic links** (SeCreateSymbolicLinkPrivilege) is required (and activating developer mode is only one possible way to get there), see https://learn.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/create-symbolic-links; Test by using the "mklink" command in the command line
-- note that the installation of the actual **Swift Toolchain** requires admin rights, especially _because additions are made to the Visual Studio installation_ (in `"%UniversalCRTSdkDir%\Include` and in `%VCToolsInstallDir%\include `, the two included environment variables are set in the x64 Native Tools Command Prompt of Visual Studio); other installation parts are installed to `%SystemDrive%\Library` and to `%PROGRAMFILES%\swift`, and the value of the PATH environment variable becomes two corresponding paths added
+- note that the installation of the actual **Swift Toolchain** requires admin rights, especially _because additions are made to the Visual Studio installation_ (in `"%UniversalCRTSdkDir%\Include` and in `%VCToolsInstallDir%\include `, the two included environment variables are set in the x64 Native Tools Command Prompt of Visual Studio); other installation parts are installed to `%SystemDrive%\Library` and to `%PROGRAMFILES%\swift`, and the value of the PATH environment variable becomes the paths corresponding to `%PROGRAMFILES%\swift\icu-69.1\usr\bin`, `%PROGRAMFILES%\swift\runtime-development\usr\bin`, and `%SystemDrive%\Developer\Toolchains\unknown-Asserts-development.xctoolchain\usr\bin` added
+- you can build **your own installation process** as a replacement for the official toolchain installer by using the directories as installed by the installer, setting the appropriate paths, and copying some files into the Visual Studio installation as decribed below
 - IDE: **Visual Studio Code** with the [Swift extension](https://marketplace.visualstudio.com/items?itemName=sswg.swift-lang), useful settings for Visual Studio Code see in the section "Suggested settings for Visual Studio Code" below; see also [VS Code Swift extension lesser known features](https://opticalaberration.com/2022/11/vscode-features.html), there e.g. "Local editing of packages" (important for the simultaneous further development of dependent packages); _There should only be one Visual Studio installation (as of early 2023),_ and important tools such as Git must also be accessible outside of Visual Studio's "x64 Native Tools Command Prompt".
+
+**files copied into the Visual Studio installation** (the environment variables `UniversalCRTSdkDir` and `VCToolsInstallDir` as set within the x64 Native Tools Command Prompt of Visual Studio, `SDKROOT` should point to `%SystemDrive%\Library\Developer\Platforms\Windows.platform\Developer\SDKs\Windows.sdk\usr\share` for the standard installation):
+
+```batch
+copy /Y %SDKROOT%\usr\share\ucrt.modulemap "%UniversalCRTSdkDir%\Include\%UCRTVersion%\ucrt\module.modulemap"
+copy /Y %SDKROOT%\usr\share\visualc.modulemap "%VCToolsInstallDir%\include\module.modulemap"
+copy /Y %SDKROOT%\usr\share\visualc.apinotes "%VCToolsInstallDir%\include\visualc.apinotes"
+copy /Y %SDKROOT%\usr\share\winsdk.modulemap "%UniversalCRTSdkDir%\Include\%UCRTVersion%\um\module.modulemap"
+```
 
 #### Distribution of compiled programs under Windows
 
