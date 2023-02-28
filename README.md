@@ -37,7 +37,7 @@ _All instructions and information are without any guarantee._
 
 ### Linux
 
-- See https://www.swift.org/getting-started or Docker-Images see above.
+- See https://www.swift.org/getting-started or [Docker-Images](https://hub.docker.com/_/swift/?tab=tags).
 - a credential manager must be activated for Git if the Swift Package Manager needs to pull packages from private repositories
 - IDE: like Windows
 - first steps with Swift: see Windows
