@@ -37,7 +37,7 @@ _All instructions and information are without any guarantee._
 
 ### Linux
 
-- See https://www.swift.org/getting-started or [Docker-Images](https://hub.docker.com/_/swift/?tab=tags).
+- see https://www.swift.org/getting-started or [Docker-Images](https://hub.docker.com/_/swift/?tab=tags)
 - a credential manager must be activated for Git if the Swift Package Manager needs to pull packages from private repositories
 - IDE: like Windows
 - first steps with Swift: see Windows
@@ -46,11 +46,11 @@ _All instructions and information are without any guarantee._
 
 ### macOS
 
-- Install from [Xcode](https://developer.apple.com/xcode)
+- install [Xcode](https://developer.apple.com/xcode)
 - a credential manager must be activated for Git if packages from private repositories have to be pulled from the Swift Package Manager (should not be explicitly necessary within Xcode)
 - other IDE: see Windows
 - first steps with Swift: see Windows
-- The Swift runtime (Swift standard libraries) is part of the operating system on Apple platforms (this is possible because of the stable ABI already implemented there), so new features (language or standard libraries) may only be available there with new operating system versions and you sometimes have to use [`#available` annotations](https://www.avanderlee.com/swift/available-deprecated-renamed/) (for individual components, see also [the official Swift documentation](https ://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes/)) or (in the configuration for the package manager, for the whole package) with the [`platforms` flag ](https://github.com/apple/swift-package-manager/blob/main/Documentation/PackageDescription.md#package) (note: restrictions according to `platforms` only for platforms mentioned there)
+- the Swift runtime (Swift standard libraries) is part of the operating system on Apple platforms (this is possible because of the stable ABI already implemented there), so new features (language or standard libraries) may only be available there with new operating system versions and you sometimes have to use [`#available` annotations](https://www.avanderlee.com/swift/available-deprecated-renamed/) (for individual components, see also [the official Swift documentation](https ://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes/)) or (in the configuration for the package manager, for the whole package) with the [`platforms` flag ](https://github.com/apple/swift-package-manager/blob/main/Documentation/PackageDescription.md#package) (note: restrictions according to `platforms` only for platforms mentioned there)
 
 ## Suggested settings for Visual Studio Code
 
