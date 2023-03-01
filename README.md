@@ -88,7 +88,7 @@ Set "workbench.editor.enablePreview": false. Then the files stay open. (Alternat
 - on platforms other than macOS, tools are provided for the various types of **on-the-fly analysis** that complement the capabilities of "[Instruments](https://www.avanderlee.com/debugging/xcode-instruments-time-profiler/)" correspond to the Xcode installation (e.g. energy consumption), not or (as of early 2023) not yet available; if you want to carry out the relevant analysis, you have to do it under macOS
 - the official **Swift book:** https://docs.swift.org/swift-book/documentation/the-swift-programming-language/, especially important for getting started: [Optionals](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/thebasics) and [Optional Chaining](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/optionalchaining) and the very useful [`guard` statement](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/controlflow#Early-Exit) in this context, which many `if ... else ...` constructs are avoided
 - **platform-specific code** (or code specifically for the debug version) can be compiled using the appropriate [Compiler Directives](https://www.swiftbysundell.com/articles/using-compiler-directives-in-swift/ ) (full listing [in the Swift documentation](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/statements/))
-- the **REPL** does not yet work properly under Windows (as of early 2023).
+- to start the **REPL** under Wimdows, you need to provide some extra arguments (as of early 2023), cf. https://www.swift.org/getting-started
 - the realization of the complete **equality of the standard Swift libraries on different platforms** (analogous to "[.NET Core](https://de.wikipedia.org/wiki/.NET_(Platform)#History)" from 2016) [planned from 2023]( https://www.swift.org/blog/future-of-foundation/), _until then it should always be tested (apart from further tests) whether a Swift program for all target platforms compiled_
 - **Documentation in code** according to [DocC](https://www.swift.org/documentation/docc/)
 
@@ -96,7 +96,7 @@ Set "workbench.editor.enablePreview": false. Then the files stay open. (Alternat
 
 _This section describes how the Swift Package Manager proceeds, its procedure corresponds to a [common practice elsewhere](https://en.wikipedia.org/wiki/Dependency_hell#Solutions). A procedure that makes sense in this context is explained._
 
-_See also the relevant Swift Package Manager documentation: ["Building Swift Packages or Apps that Use Them in Continuous Integration Workflows"](https://github.com/apple/swift-package-manager/blob/main/Documentation/ContinousIntegration.md)._
+_See also the relevant Swift Package Manager documentation: ["Building Swift Packages or Apps that Use Them in Continuous Integration Workflows"](https://github.com/aplple/swift-package-manager/blob/main/Documentation/ContinousIntegration.md)._
 
 ### Explanation "semantic versioning"
 
