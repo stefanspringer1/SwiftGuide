@@ -41,6 +41,16 @@ copy /Y %SDKROOT%\usr\share\visualc.apinotes "%VCToolsInstallDir%\include\visual
 copy /Y %SDKROOT%\usr\share\winsdk.modulemap "%UniversalCRTSdkDir%\Include\%UCRTVersion%\um\module.modulemap"
 ```
 
+#### Why is Visual Studio necessary?
+
+Question 1: Why is Visual Studio required for Swift?
+
+Answer: This is due to the dependency of some necessary components.
+
+Question 2: Why isn't this necessary for other natively compiling languages like Rust or Go, but for Swift?
+
+Answer: The special thing about Swift under Windows is that Swift is implemented as a language with equal rights to C++ etc. so to speak, with access to all Windows libraries. This system integration does not exist with Rust and Go.
+
 #### Distribution of compiled programs under Windows
 
 - there is (as of early 2023) for Swift programs **under Windows no static linking yet,** so to run a compiled Swift program, some DLLs must be available separately from the program, as explained below
@@ -116,7 +126,7 @@ _See also the relevant Swift Package Manager documentation: ["Building Swift Pac
 
 - Newer but still suitable versions of packages are automatically used (when updating the packages, see above). These may contain important bug fixes.
 - A consistent statement of precise version numbers would be extremely difficult to handle in practice.
-    <span style="color:Gray">**Reason why a general use of precise version numbers is [not practical](https://en.wikipedia.org/wiki/Dependency_hell#Problems):**
+    <span style="color:Gray">**Reason why a general use of precise version numbers is [not practical](https://en.wikipedia.org/wiki/Dependency_hell#Problems):**m
 The package versions must be compared between all packages used, so the same packages may be drawn from several packages used. Example: The program requires Package A and Package B, and both Package A and Package B require Package C. But Package A may require a slightly newer version of Package C than Package B requires. This means that the package manager gets a number of version conditions and has to find a solution (or issue an appropriate error message). If you would generally only specify precise versions for all packages (over several levels!), then that would be difficult to handle. In other words: The package manager will then often not be able to find a solution. It should be remembered that packages from other sources are also commonly used (however "official" they may be).</span>
 
 ### Tested version combinations
