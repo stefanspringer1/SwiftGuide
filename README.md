@@ -41,7 +41,7 @@ copy /Y %SDKROOT%\usr\share\visualc.apinotes "%VCToolsInstallDir%\include\visual
 copy /Y %SDKROOT%\usr\share\winsdk.modulemap "%UniversalCRTSdkDir%\Include\%UCRTVersion%\um\module.modulemap"
 ```
 
-**directly setting the SeCreateSymbolicLinkPrivilege / SE_CREATE_SYMBOLIC_LINK privilige:** the SE_CREATE_SYMBOLIC_LINK privilege can be set using the `gpedit.msc` tool (start it via the context menu of the Windows Explorer as administrator). If you have the Home edition of of Windows, you first have to get this tool from Microsoft using the following script (open the command line window as administrator):
+**directly setting the SeCreateSymbolicLinkPrivilege / SE_CREATE_SYMBOLIC_LINK privilige:** the SE_CREATE_SYMBOLIC_LINK privilege can be set using the `gpedit.msc` tool (start it via the context menu of the Windows Explorer as administrator); if you have the Home edition of of Windows, you first have to get this tool from Microsoft using the following script (open the command line window as administrator):
 
 ```Batch
 @echo off 
