@@ -54,13 +54,13 @@ pause
 
 #### Why is Visual Studio necessary?
 
-Question 1: Why is Visual Studio required for Swift?
+_Question 1:_ Why is Visual Studio required for Swift?
 
-Answer: This is due to the dependency of some necessary components (the Windows SDK and ucrt have a dependency on the headers and import libraries of VCRUNTIME for development, which are not part of the Microsoft Visual C++ Redistributable).
+_Answer:_ This is due to the dependency of some necessary components (the Windows SDK and ucrt have a dependency on the headers and import libraries of VCRUNTIME for development, which are not part of the Microsoft Visual C++ Redistributable).
 
-Question 2: Why isn't this necessary for other natively compiling languages like Rust or Go, but for Swift?
+_Question 2:_ Why isn't this necessary for other natively compiling languages like Rust or Go, but for Swift?
 
-Answer: The special thing about Swift on Windows is that Swift is implemented as a language with equal rights to C++ etc. so to speak, with access to all Windows libraries. The Swift runtime and standard library is implemented using direct calls into the Windows APIs, not emulating things like process startup, allowing a more "bare metal" environment compared to other environments. Swift on Windows is therefore a "true" native solution for Windows programming. This kind of system integration does not exist with Rust and Go.
+_Answer:_ The special thing about Swift on Windows is that Swift is implemented as a language with equal rights to C++ etc. so to speak, with access to all Windows libraries. The Swift runtime and standard library is implemented using direct calls into the Windows APIs, not emulating things like process startup, allowing a more "bare metal" environment compared to other environments. Swift on Windows is therefore a "true" native solution for Windows programming. This kind of system integration does not exist with Rust and Go.
 
 #### Distribution of compiled programs under Windows
 
