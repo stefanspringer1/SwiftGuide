@@ -45,7 +45,7 @@ copy /Y %SDKROOT%\usr\share\winsdk.modulemap "%UniversalCRTSdkDir%\Include\%UCRT
 
 Question 1: Why is Visual Studio required for Swift?
 
-Answer: This is due to the dependency of some necessary components (the Windows SDK and ucrt have a dependency on the headers and import libraries of VCRUNTIME, which are not part of the Microsoft Visual C++ Redistributable).
+Answer: This is due to the dependency of some necessary components (the Windows SDK and ucrt have a dependency on the headers and import libraries of VCRUNTIME for development, which are not part of the Microsoft Visual C++ Redistributable).
 
 Question 2: Why isn't this necessary for other natively compiling languages like Rust or Go, but for Swift?
 
