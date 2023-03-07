@@ -1,6 +1,6 @@
 # Swift Guide
 
-This is a little guide about the programming language [Swift](https://www.swift.org), about the installation and how to get started. There is also an additional section on versioning of dependent packages.
+This is a little guide for the programming language [Swift](https://www.swift.org), about the installation and how to get started. There is also an additional section on versioning of dependent packages.
 
 _All instructions and information are without any guarantee._
 
