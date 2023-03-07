@@ -11,7 +11,7 @@ _All instructions and information are without any guarantee._
 **tl;tr** The core requirements for developing Swift programs on Windows are:
 
 - **Visual Studio Installation** for enabling native development against the Windows SDK
-- **Developer mode** for working Swift Package Manager (symlinks)
+- **Developer mode** to allow symbolic links
 - **Admin rights** for installing the actual Swift toolchain
 - **Visual Studio Code** as IDE
 
