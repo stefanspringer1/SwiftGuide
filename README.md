@@ -89,13 +89,13 @@ _Answer:_ The special thing about Swift on Windows is that Swift is implemented 
 
 ## Suggested settings for Visual Studio Code
 
-### Detect encoding
-
-Set "files.autoGuessEncoding":true.
-
 ### Inlay hints only with keyboard shortcut
 
 Set Editor › Inlay Hints: offUnlessPressed.
+
+### Detect encoding
+
+Set "files.autoGuessEncoding":true.
 
 ### Don't preview found files
 
