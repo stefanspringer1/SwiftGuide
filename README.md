@@ -113,6 +113,7 @@ Set "workbench.editor.enablePreview": false. Then the files stay open. (Alternat
 - to start the **REPL** under Windows, you need to provide some extra arguments (as of early 2023), cf. https://www.swift.org/getting-started
 - the realization of the complete **equality of the standard Swift libraries on different platforms** (analogous to "[.NET Core](https://de.wikipedia.org/wiki/.NET_(Platform)#History)" from 2016) [planned from 2023]( https://www.swift.org/blog/future-of-foundation/), _until then it should always be tested (apart from further tests) whether a Swift program for all target platforms compiled_
 - **Documentation in code** according to [DocC](https://www.swift.org/documentation/docc/)
+- for executing the **unit tests** of a Swift package, use the test icon in Visual Studio Code (on the left) or in the command line e.g. `swift test --parallel --xunit-output test-log.xml` (as of early 2023, the `--parallel` argument is necessary for `--xunit-output` to work)
 
 ## Versioning of dependent packages
 
