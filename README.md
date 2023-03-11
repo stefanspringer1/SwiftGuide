@@ -15,7 +15,7 @@ _All instructions and information are without any guarantee._
 - **Admin rights** for installing the actual Swift toolchain
 - **Visual Studio Code** as IDE
 
-#### Setup
+#### Setup and platform-specific hints
 
 - the instructions on https://www.swift.org/getting-started, section "On Windows" are decisive; _**the components are listed here again (as of early 2023) with additional comments including the use of an IDE**_
 - an installation of **Visual Studio** (as of early 2023: if possible version 2022, but at least version 2019, the Community Edition is sufficient) is required with certain Visual Studio components (Windows 10 SDK and C++ Build Tools); _usually, the parallel installation of several Visual Studio versions should be avoided_, if necessary execute commands in the command line in the "x64 Native Tools Command Prompt" of the corresponding Visual Studio installation (this generally applies if tools such as Git or Python are used as Visual Studio components have been installed and are not generally accessible in the command line); for license issues see (for Visual Studio 2022) [the according documentation](https://visualstudio.microsoft.com/license-terms/vs2022-ga-community)
@@ -115,7 +115,7 @@ Unless you set "workbench.editor.enablePreview": false, a file only simply click
 - the realization of the complete **equality of the standard Swift libraries on different platforms** (analogous to "[.NET Core](https://de.wikipedia.org/wiki/.NET_(Platform)#History)" from 2016) [starts in 2023]( https://www.swift.org/blog/future-of-foundation/), _until then it should always be tested (apart from further tests) whether a Swift program compiles for all target platforms_
 - **Documentation in code** according to [DocC](https://www.swift.org/documentation/docc/)
 - for executing the **unit tests** of a Swift package, use the test icon in Visual Studio Code (on the left) or in the command line e.g. `swift test --parallel --xunit-output test-log.xml` (as of early 2023, the `--parallel` argument is necessary for `--xunit-output` to work)
-- consider the **platform specific hints** in the preceding sections
+- consider the **platform-specific hints** in the preceding sections
 
 ## Versioning of dependent packages
 
