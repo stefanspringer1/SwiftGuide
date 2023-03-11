@@ -114,7 +114,7 @@ Unless you set "workbench.editor.enablePreview": false, a file only simply click
 - the realization of the complete **equality of the standard Swift libraries on different platforms** (analogous to "[.NET Core](https://de.wikipedia.org/wiki/.NET_(Platform)#History)" from 2016) [planned from 2023]( https://www.swift.org/blog/future-of-foundation/), _until then it should always be tested (apart from further tests) whether a Swift program for all target platforms compiled_
 - **Documentation in code** according to [DocC](https://www.swift.org/documentation/docc/)
 - for executing the **unit tests** of a Swift package, use the test icon in Visual Studio Code (on the left) or in the command line e.g. `swift test --parallel --xunit-output test-log.xml` (as of early 2023, the `--parallel` argument is necessary for `--xunit-output` to work)
-- If you are working with a CI pipeline under Windows, you should not use PowerShell (which is e.g. the default for GitHub Windows CI pipelines) but be sure to use cmd or bash (bash is available for GitHub Windows CI pipelines).
+- You should avoid PowerShell on Windows for Swift development, especially If you are working with a CI pipeline (PowerShell is the default for GitHub Windows CI pipelines, configure the pipeline to use cmd or maybe even better bash, bash is available for GitHub Windows CI pipelines).
 
 ## Versioning of dependent packages
 
