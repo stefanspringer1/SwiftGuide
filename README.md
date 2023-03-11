@@ -87,7 +87,7 @@ _Answer:_ The special thing about Swift on Windows is that Swift is implemented 
 - first steps with Swift: see Windows
 - the Swift runtime (Swift standard libraries) is part of the operating system on Apple platforms (this is possible because of the stable ABI already implemented there), so new features (language or standard libraries) may only be available there with new operating system versions and you sometimes have to use [`#available` annotations](https://www.avanderlee.com/swift/available-deprecated-renamed/) (for individual components, see also [the official Swift documentation](https ://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes/)) or (in the configuration for the package manager, for the whole package) with the [`platforms` flag ](https://github.com/apple/swift-package-manager/blob/main/Documentation/PackageDescription.md#package) (note: restrictions according to `platforms` only for platforms mentioned there)
 
-## Suggested settings for Visual Studio Code
+## Suggested settings and tips for Visual Studio Code
 
 ### Inlay hints only with keyboard shortcut
 
@@ -97,9 +97,9 @@ Set Editor › Inlay Hints: offUnlessPressed.
 
 Set "files.autoGuessEncoding":true.
 
-### Don't preview found files
+### Double click a file in the navigator to keep it open
 
-Set "workbench.editor.enablePreview": false. Then the files stay open. (Alternative: Open a found file with a double click if you want it to stay open.)
+Unless you set "workbench.editor.enablePreview": false, a file only simply clicked in the navigator will be replaced in the editor pane by the next one clicked. Double-click a file to let it stay in the editor pane until you close it.
 
 ## Getting started with Swift
 
