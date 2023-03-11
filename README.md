@@ -97,7 +97,7 @@ Set Editor › Inlay Hints: offUnlessPressed.
 
 Set "files.autoGuessEncoding":true.
 
-### Double click a file in the navigator to keep it open
+### Double-click a file in the navigator to keep it open
 
 Unless you set "workbench.editor.enablePreview": false, a file only simply clicked in the navigator will be replaced in the editor pane by the next one clicked. Double-click a file to let it stay in the editor pane until you close it.
 
