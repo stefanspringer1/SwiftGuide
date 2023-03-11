@@ -115,7 +115,7 @@ Unless you set "workbench.editor.enablePreview": false, a file only simply click
 - **Documentation in code** according to [DocC](https://www.swift.org/documentation/docc/)
 - for executing the **unit tests** of a Swift package, use the test icon in Visual Studio Code (on the left) or in the command line e.g. `swift test --parallel --xunit-output test-log.xml` (as of early 2023, the `--parallel` argument is necessary for `--xunit-output` to work)
 - you should **avoid PowerShell on Windows** for Swift development (or also in the general case), especially If you are working with a CI pipeline (PowerShell is the default for GitHub Windows CI pipelines, configure the pipeline to use `cmd` or maybe even better `bash`, `bash` is available for GitHub Windows CI pipelines
-- consider **more platform specific hints** in the sections above
+- consider **more platform specific hints** in the preceding sections
 
 ## Versioning of dependent packages
 
