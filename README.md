@@ -168,8 +168,8 @@ Details:
 
 |Event | Java  | C# | Swift|
 |-------- | -------- | --------| --------|
-| problem caused by virtual machine errors or compiler errors | not catchable\* | uncatchable | uncatchable |
-| general memory "hunger" | uncatchable crash\*\* | uncatchable | not catchable, no crash |
+| problem caused by virtual machine errors or compiler errors | uncatchable\* | uncatchable | uncatchable |
+| general memory "hunger" | uncatchable crash\*\* | uncatchable | uncatchable, no crash |
 | overflow with program termination | uncatchable | uncatchable | uncatchable |
 | explicitly thrown exception | Handling of a "checked" exception is enforced by the compiler, an "unchecked" exception is not (results in a crash if unhandled) | Handling of a "checked" exception is enforced by the compiler, an "unchecked" exception is not (results in a crash if unhandled) | there are only “checked” exceptions |
 | null pointer exception | unchecked Exception, but catchable | unchecked Exception, but catchable | only possible if non-zero assumption is explicitly enforced &#9760;, then uncatchable |
