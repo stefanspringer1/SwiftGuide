@@ -161,7 +161,7 @@ The package versions must be compared between all packages used, so the same pac
 
 This is an overview of “dangerous” operations or situations which could cause a Swift program to crash, in comparison to Java and C#. (Note that even if your program does not crash, your program still might do unexpected things e.g. because of an unnoticed overflow of a number value.)
 
-- None of these systems can handle problems within a program caused by “memory hunger”, aborts because of a high recursion level (or generally a “stack overflow”) or problems in the virtual machine or corresponding problems caused by compiler errors.
+- None of these systems can handle problems within a program caused by excessive “memory hunger”, aborts because of a high recursion level (or generally a “stack overflow”) or problems in the virtual machine or corresponding problems caused by compiler errors.
 - Apart from these points, “everything” can be intercepted (“catched”) in managed code systems such as Java or C#.
 - However, neither Java nor C# enforces catching all possible explicitly thrown exceptions (there are so-called “unchecked” exceptions whose handling is not enforced), and arithmetic operations or poorly implemented standard library APIs can throw implicit errors. A general “try/catch” wrapping must then be carried out for each job, for example.
 - In Swift, a “general” try/catch wrapping as in Java or C# is not possible, but only a few “dangerous” operations (e.g. forced unwrapping of optionals) or easily recognizable constructions or functions (e.g. “UnsafeMutableRawPointer”) have to be dispensed with in order to achieve the same situation as for Java or C# (there are no “unchecked” exceptions). Apart from the dangers of overflow or underflow of numbers (these are often overlooked, especially since the according standard behavior differs from Java and C#, see the following table), the programmer is usually aware of the danger of these operations and they are then at best not used or only used cautiously (possible overflows or underflows of numbers can also be handled), however (as of early 2023) no general check for such dangerous operations by the compiler is possible.
@@ -171,7 +171,7 @@ Details:
 |Event | Java  | C# | Swift|
 |-------- | -------- | --------| --------|
 | problem caused by virtual machine errors or compiler errors | uncatchable\* | uncatchable | uncatchable |
-| general “memory hunger” | uncatchable crash\*\* | uncatchable | uncatchable, no crash |
+| excessive “memory hunger” | uncatchable crash\*\* | uncatchable | uncatchable, no crash |
 | stack overflow | uncatchable | uncatchable | uncatchable |
 | explicitly thrown exception | Handling of a “checked” exception is enforced by the compiler, an “unchecked” exception is not (results in a crash if unhandled) | Handling of a “checked” exception is enforced by the compiler, an “unchecked” exception is not (results in a crash if unhandled) | there are only “checked” exceptions |
 | null pointer exception | unchecked Exception, but catchable | unchecked Exception, but catchable | only possible if non-zero assumption is explicitly enforced &#9760;, then uncatchable |
