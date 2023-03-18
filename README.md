@@ -186,6 +186,6 @@ Details:
 \*: “catchable” means that a crash can be prevented using “try”/“catch” (or in Swift: “do”/“catch”)<br/>
 \*\*: “crash” can mean the termination of the program run by a virtual machine with a corresponding message; in any case, the program is aborted<br/>
 \*\*\*: behavior regarding arithmetic can additionally be changed using compiler flags (this may result in IEEE conformity being broken)<br/>
-\*\*\*\*: index access is generally to be replaced with other methods; bypassing a possible error when accessing the index using dependent types is currently not possible in any of the systems mentioned; with Swift, index access can be made an unsafe\*\*\*\*\* operation using a compiler flag<br/>
+\*\*\*\*: index access is generally to be replaced with other methods; avoiding such errors by the use of dependent types is currently not possible in any of the systems mentioned; with Swift, index access can be made an unsafe\*\*\*\*\* operation using a compiler flag<br/>
 \*\*\*\*\*: definition: “unsafe” operations have an undefined behavior for some inputs<br/>
 &#9760;: “dangerous” Swift operation, generally avoidable
