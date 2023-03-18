@@ -159,7 +159,7 @@ The package versions must be compared between all packages used, so the same pac
 
 ## Comparing Swift against Java and C# regarding "problematic" events
 
-This is an overview of "dangerous" operations or situations which could cause a Swift program to crash, in comparison to Java and C#. (Even if your progranm does not crash, your program still might do unexpected things e.g. because of an unnoticed number-overflow.)
+This is an overview of "dangerous" operations or situations which could cause a Swift program to crash, in comparison to Java and C#. (Note that even if your progranm does not crash, your program still might do unexpected things e.g. because of an unnoticed number-overflow.)
 
 - None of these systems can handle problems within a program caused by "memory hunger", overflow aborts (recursion level too high) or problems in the virtual machine or corresponding problems caused by compiler errors.
 - Apart from these points, "everything" can be intercepted ("catched") in managed code systems such as Java or C#.
