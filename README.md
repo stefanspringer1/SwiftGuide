@@ -155,7 +155,7 @@ The package versions must be compared between all packages used, so the same pac
 ### Concurrent development of dependent packages
 
 - Packages can also be referenced locally via `file://...` to be able to easily develop dependent packages at the same time
-- cf. [Feature "Local editing of packages"](https://opticalaberration.com/2022/11/vscode-features.html) of [Swift extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=sswg.swift-lang)
+- cf. [the feature "Local editing of packages"](https://opticalaberration.com/2022/11/vscode-features.html) of [Swift extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=sswg.swift-lang)
 
 ## Comparing Swift against Java/C# regarding "problematic" events
 
