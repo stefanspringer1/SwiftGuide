@@ -186,5 +186,5 @@ Details:
 \*\*: "crash" can also mean the termination of the program run by a virtual machine with a corresponding message; in any case, the program run is aborted<br/>
 \*\*\*: behavior regarding arithmetic can also be set using compiler flags (this may result in IEEE conformity being broken)<br/>
 \*\*\*\*: index access is generally to replace with other methods; bypassing a possible error when accessing the index using dependent types is currently not possible in any of the systems mentioned; with Swift, index access can be made an unsafe\*\*\*\*\* operation using a compiler flag<br/>
-\*\*\*\*\*: Definition: "unsafe" operations have an undefined behavior for some inputs<br/>
+\*\*\*\*\*: definition: "unsafe" operations have an undefined behavior for some inputs<br/>
 &#9760;: "dangerous" Swift operation, generally avoidable
