@@ -181,8 +181,13 @@ Details:
 | unsafe\*\*\*\*\* operations | special case | special case| corresponding operations are explicitly marked as unsafe &#9760; recognizable (example: "pointer arithmetic"), problems cannot be caught |
 
 \*: “catchable” means that a crash can be prevented using standard try/catch formulations
+
 \*\*: "crash" can also mean the termination of the program run by a virtual machine with a corresponding message; in any case, the program run is aborted
+
 \*\*\*: behavior regarding arithmetic can also be set using compiler flags (this may result in IEEE conformity being broken)
+
 \*\*\*\*: index access is generally to replace with other methods; bypassing a possible error when accessing the index using dependent types is currently not possible in any of the systems mentioned; with Swift, index access can be made an unsafe\*\*\*\*\* operation using a compiler flag
+
 \*\*\*\*\*: Definition: "unsafe" operations have an undefined behavior for some inputs
+
 &#9760;: "dangerous" Swift operation, generally avoidable
