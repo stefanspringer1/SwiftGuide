@@ -157,7 +157,7 @@ The package versions must be compared between all packages used, so the same pac
 - Packages can also be referenced locally via `file://...` to be able to easily develop dependent packages at the same time
 - cf. [Feature "Local editing of packages"](https://opticalaberration.com/2022/11/vscode-features.html) of [Swift extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=sswg.swift-lang)
 
-## Compariing Java/C# against Swift regarding "problematic" events
+## Comparing Swift againstJava/C# regarding "problematic" events
 
 - None of these systems can handle problems within a program caused by "memory hunger", overflow aborts (recursion level too high) or problems in the virtual machine or corresponding problems caused by compiler errors.
 - Apart from these points, "everything" can be intercepted ("catched") in managed code systems such as Java or C#.
