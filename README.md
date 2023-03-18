@@ -177,7 +177,7 @@ Details:
 | explicitly thrown exception | Handling of a “checked” exception is enforced by the compiler, an “unchecked” exception is not (results in a crash if unhandled) | Handling of a “checked” exception is enforced by the compiler, an “unchecked” exception is not (results in a crash if unhandled) | there are only “checked” exceptions |
 | null pointer exception | unchecked Exception, but catchable | unchecked Exception, but catchable | only possible if non-zero assumption is explicitly enforced &#9760;, then uncatchable |
 | floating point division by 0 | no error (result: infinite) | no error (result: infinite) | no error (result: infinity)\*\*\* |
-| integer division by 0 | catchable (unchecked) | catchable (unchecked) | cannot be caught &#9760; |
+| integer division by 0 | catchable (unchecked) | catchable (unchecked) | uncatchable &#9760; |
 | number over-/underflow | no error (operators are “overflow operators”) | no error (operators are “overflow operators”) | uncatchable error &#9760;, but overflow operators (with prefix "\&") and controlled operations (e.g. `addingReportingOverflow`) available\*\*\* |
 | array index not allowed\*\*\*\* | catchable (unchecked) | catchable (unchecked) | cannot be caught &#9760; |
 | problems analogous to the array index problem caused by poorly formulated APIs | yes, even as unchecked exceptions, but catchable | yes, even as unchecked exceptions, but catchable | in general not present (corresponding operations return optional values) |
