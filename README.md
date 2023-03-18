@@ -174,7 +174,7 @@ Details:
 | too low memory on the system | uncatchable | uncatchable | uncatchable |
 | excessive “memory hunger” while enough memory on the system | uncatchable crash\*\* | uncatchable | uncatchable, no crash |
 | stack overflow | uncatchable | uncatchable | uncatchable |
-| explicitly thrown exception | handling of a “checked” exception is enforced by the compiler, an “unchecked” exception is not (results in a crash if unhandled) | handling of a “checked” exception is enforced by the compiler, an “unchecked” exception is not (results in a crash if unhandled) | there are only “checked” exceptions |
+| explicitly thrown exception | handling of an exception is enforced by the compiler for of a “checked” one, but not for a “unchecked” one (results in a crash if unhandled) |handling of an exception is enforced by the compiler for of a “checked” one, but not for a “unchecked” one (results in a crash if unhandled) | there are only “checked” exceptions |
 | null pointer exception | unchecked Exception, but catchable | unchecked Exception, but catchable | only possible if non-null assumption is explicitly enforced (“forced unwrapping” of an optional) &#9760;, then uncatchable |
 | floating point division by 0 | no error (result: infinite) | no error (result: infinite) | no error (result: infinity)\*\*\* |
 | integer division by 0 | catchable (unchecked) | catchable (unchecked) | uncatchable &#9760; |
