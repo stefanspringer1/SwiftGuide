@@ -1,6 +1,6 @@
 # Swift Guide
 
-This is a little guide for the programming language [Swift](https://www.swift.org), about the installation and how to get started. There is also an additional section on versioning of dependent packages.
+This is a little guide for the programming language [Swift](https://www.swift.org), about the installation and how to get started. There is also an additional section on versioning of dependent packages and an overview of "dangerous" operations (which could cause a program to crash).
 
 _All instructions and information are without any guarantee._
 
@@ -156,3 +156,33 @@ The package versions must be compared between all packages used, so the same pac
 
 - Packages can also be referenced locally via `file://...` to be able to easily develop dependent packages at the same time
 - cf. [Feature "Local editing of packages"](https://opticalaberration.com/2022/11/vscode-features.html) of [Swift extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=sswg.swift-lang)
+
+## Compariing Java/C# against Swift regarding "problematic" events
+
+- None of these systems can handle problems within a program caused by "memory hunger", overflow aborts (recursion level too high) or problems in the virtual machine or corresponding problems caused by compiler errors.
+- Apart from these points, "everything" can be intercepted ("catched") in managed code systems such as Java or C#.
+- However, neither Java nor C# enforces catching all possible explicitly thrown exceptions (there are so-called "unchecked" exceptions whose handling is not enforced), and arithmetic operations or poorly implemented standard library APIs can throw implicit errors. A general try/catch wrap must then be carried out for each job, for example.
+- In Swift, a "general" try/catch wrapping as in Java or C# is not possible, but only a few "dangerous" or correspondingly marked operations have to be dispensed with in order to achieve the same situation as for Java or C# (there are no "unchecked" exceptions). Apart from the dangers of overflow or underflow (these are often overlooked, especially since the standard behavior here differs from Java and C#, see the following table), the programmer is usually aware of the danger of these operations and they are then at best not used or only used cautiously, however (as of early 2023) no general check for such dangerous operations by the compiler is possible.
+
+Details:
+
+|Event | Java  | C# | Swift|
+|-------- | -------- | --------| --------|
+| problem caused by virtual machine errors or compiler errors | not catchable\* | uncatchable | uncatchable |
+| general memory "hunger" | uncatchable crash\*\* | uncatchable | not catchable, no crash |
+| overflow with program termination | uncatchable | uncatchable | uncatchable |
+| explicitly thrown exception | Handling of a "checked" exception is enforced by the compiler, an "unchecked" exception is not (results in a crash if unhandled) | Handling of a "checked" exception is enforced by the compiler, an "unchecked" exception is not (results in a crash if unhandled) | there are only “checked” exceptions |
+| null pointer exception | unchecked Exception, but catchable | unchecked Exception, but catchable | only possible if non-zero assumption is explicitly enforced &#9760;, then uncatchable |
+| floating point division by 0 | no error (result: infinite) | no error (result: infinite) | no error (result: infinity)\*\*\* |
+| integer division by 0 | catchable (unchecked) | catchable (unchecked) | cannot be caught &#9760; |
+| number over-/underflow | no error (operators are "overflow operators") | no error (operators are "overflow operators") | uncatchable error &#9760;, but overflow operators (prefix "\&") and controlled operations (e.g. `addingReportingOverflow`) available\*\*\* |
+| array index not allowed\*\*\*\* | catchable (unchecked) | catchable (unchecked) | cannot be caught &#9760; |
+| problems analogous to the array index problem caused by poorly formulated APIs | yes, even as unchecked exceptions, but catchable | yes, even as unchecked exceptions, but catchable | in general not present (corresponding operations return optional values) |
+| unsafe\*\*\*\*\* operations | special case | special case| corresponding operations are explicitly marked as unsafe &#9760; recognizable (example: "pointer arithmetic"), problems cannot be caught |
+
+\*: “catchable” means that a crash can be prevented using standard try/catch formulations
+\*\*: "crash" can also mean the termination of the program run by a virtual machine with a corresponding message; in any case, the program run is aborted
+\*\*\*: behavior regarding arithmetic can also be set using compiler flags (this may result in IEEE conformity being broken)
+\*\*\*\*: index access is generally to replace with other methods; bypassing a possible error when accessing the index using dependent types is currently not possible in any of the systems mentioned; with Swift, index access can be made an unsafe\*\*\*\*\* operation using a compiler flag
+\*\*\*\*\*: Definition: "unsafe" operations have an undefined behavior for some inputs
+&#9760;: "dangerous" Swift operation, generally avoidable
