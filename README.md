@@ -1,6 +1,6 @@
 # Swift Guide
 
-This is a little guide for the programming language [Swift](https://www.swift.org), about the installation and how to get started. There is also an additional section on versioning of dependent packages and an overview of "dangerous" operations (which could cause a program to crash).
+This is a little guide for the programming language [Swift](https://www.swift.org), about the installation and how to get started. There is also an additional section on versioning of dependent packages and an overview of "dangerous" operations or situations which could cause a program to crash.
 
 _All instructions and information are without any guarantee._
 
@@ -159,7 +159,7 @@ The package versions must be compared between all packages used, so the same pac
 
 ## Comparing Swift against Java/C# regarding "problematic" events
 
-This is an overview of "dangerous" operations (which could cause a program to crash), in comparison to Java and C#. (Even if your progranm does not crash, your program still might do unexpected things e.g. because of an unnoticed number-overflow.)
+This is an overview of "dangerous" operations or situations which could cause a program to crash, in comparison to Java and C#. (Even if your progranm does not crash, your program still might do unexpected things e.g. because of an unnoticed number-overflow.)
 
 - None of these systems can handle problems within a program caused by "memory hunger", overflow aborts (recursion level too high) or problems in the virtual machine or corresponding problems caused by compiler errors.
 - Apart from these points, "everything" can be intercepted ("catched") in managed code systems such as Java or C#.
