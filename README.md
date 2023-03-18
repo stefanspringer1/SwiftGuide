@@ -159,6 +159,8 @@ The package versions must be compared between all packages used, so the same pac
 
 ## Comparing Swift against Java/C# regarding "problematic" events
 
+This is an overview of "dangerous" operations (which could cause a program to crash), in comparison to Java and C#. (Even if your progranm does not crash, your program still might do unexpected things e.g. because of an unnoticed number-overflow.)
+
 - None of these systems can handle problems within a program caused by "memory hunger", overflow aborts (recursion level too high) or problems in the virtual machine or corresponding problems caused by compiler errors.
 - Apart from these points, "everything" can be intercepted ("catched") in managed code systems such as Java or C#.
 - However, neither Java nor C# enforces catching all possible explicitly thrown exceptions (there are so-called "unchecked" exceptions whose handling is not enforced), and arithmetic operations or poorly implemented standard library APIs can throw implicit errors. A general try/catch wrapping must then be carried out for each job, for example.
