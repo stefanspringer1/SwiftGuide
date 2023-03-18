@@ -172,7 +172,7 @@ Details:
 |-------- | -------- | --------| --------|
 | problem caused by virtual machine errors or compiler errors | uncatchable\* | uncatchable | uncatchable |
 | too low memory on the system | uncatchable | uncatchable | uncatchable |
-| excessive “memory hunger” while enough memory on the system | uncatchable crash\*\* | uncatchable | uncatchable, no crash |
+| excessive “memory hunger” while enough memory on the system (or paging) | uncatchable crash\*\* | uncatchable | uncatchable, no crash |
 | stack overflow | uncatchable | uncatchable | uncatchable |
 | explicitly thrown exception | handling of a “checked” exception is enforced by the compiler, but not of an “unchecked” exception (results in a crash if unhandled) | handling of a “checked” exception is enforced by the compiler, but not of an “unchecked” exception (results in a crash if unhandled) | there are only “checked” exceptions |
 | null pointer exception | unchecked Exception, but catchable | unchecked Exception, but catchable | only possible if non-null assumption is explicitly enforced (“forced unwrapping” of an optional) &#9760;, then uncatchable |
