@@ -157,7 +157,7 @@ The package versions must be compared between all packages used, so the same pac
 - Packages can also be referenced locally via `file://...` to be able to easily develop dependent packages at the same time
 - cf. [the feature "Local editing of packages"](https://opticalaberration.com/2022/11/vscode-features.html) of [Swift extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=sswg.swift-lang)
 
-## Comparing Swift against Java/C# regarding "problematic" events
+## Comparing Swift against Java and C# regarding "problematic" events
 
 This is an overview of "dangerous" operations or situations which could cause a Swift program to crash, in comparison to Java and C#. (Even if your progranm does not crash, your program still might do unexpected things e.g. because of an unnoticed number-overflow.)
 
