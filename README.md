@@ -179,7 +179,7 @@ Details:
 | floating point division by 0 | no error (result: infinite) | no error (result: infinite) | no error (result: infinity)\*\*\* |
 | integer division by 0 | catchable (unchecked) | catchable (unchecked) | uncatchable &#9760; |
 | number over-/underflow | no error (operators are “overflow operators”) | no error (operators are “overflow operators”) | uncatchable error &#9760;, but overflow operators (with prefix "\&") and controlled operations (e.g. `addingReportingOverflow`) available\*\*\* |
-| array index not allowed\*\*\*\* | catchable (unchecked) | catchable (unchecked) | cannot be caught &#9760; |
+| array index not allowed\*\*\*\* | catchable (unchecked) | catchable (unchecked) | cannot be caught &#9760; (same for any `Collection`) |
 | problems analogous to the array index problem caused by poorly formulated APIs | yes, even as unchecked exceptions, but catchable | yes, even as unchecked exceptions, but catchable | in general not present (corresponding operations return optional values) |
 | unsafe\*\*\*\*\* operations | special case | special case| corresponding constructions and functions are easily recognizable as unsafe &#9760; by naming conventions (e.g. `UnsafeMutableRawPointer`), problems cannot be caught |
 
