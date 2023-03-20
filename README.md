@@ -159,6 +159,8 @@ The package versions must be compared between all packages used, so the same pac
 
 ## Comparing Swift against Java and C# regarding “problematic” events
 
+**tl;dr** _Swift tries to be safe (or “harmless”) while also being very efficient and guaranteeing correct results. Instead of silently failing (e.g. letting numbers overflow silently) and giving wrong results, the philosophy is that it is better to let the whole process fail in cases where other solutions would be overly inefficient or overly complex. As a guideline think “Swift is mostly harmless” and learn the patterns necessary to write safe code._
+
 This is an overview of “dangerous” operations or situations which could cause a Swift program to crash, in comparison to Java and C#. (Note that even if your program does not crash, your program still might do unexpected things e.g. because of an unnoticed overflow of a number value.)
 
 - None of these systems can handle problems within a program caused by excessive “memory hunger” (or too low memory on the system), aborts because of a high recursion level (or generally a “stack overflow”) or problems in the virtual machine or corresponding problems caused by compiler errors.
