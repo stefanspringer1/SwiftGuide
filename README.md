@@ -159,9 +159,11 @@ The package versions must be compared between all packages used, so the same pac
 
 ## Comparing Swift against Java and C# regarding “problematic” events
 
-**tl;dr** _Swift tries to be safe (you might say “harmless” i.e. avoiding dangerous operations) while also being very efficient and guaranteeing correct results. An exception mechanism as in Java or C# (where you can catch almost any error) is difficult in Swift as Swift does not use a tracing garbage collector (so discarding part of the stack leaves you with memory leaks). So instead of silently failing (e.g. letting numbers overflow silently) and giving wrong results, the philosophy is that it is better to let the whole process fail in cases where other solutions would be overly inefficient or overly complex. As a guideline, think “Swift is mostly harmless” and learn the patterns necessary to write safe code.[^2]_
+**tl;dr** _Swift tries to be safe (you might say “harmless” i.e. avoiding dangerous operations) while also being very efficient and guaranteeing correct results. An exception mechanism as in Java or C# (where you can catch almost any error) is difficult in Swift as Swift does not use a tracing garbage collector[^2] (so discarding part of the stack leaves you with memory leaks). So instead of silently failing (e.g. letting numbers overflow silently) and giving wrong results, the philosophy is that it is better to let the whole process fail in cases where other solutions would be overly inefficient or overly complex. As a guideline, think “Swift is mostly harmless” and learn the patterns necessary to write safe code.[^3]_
 
-[^2]: You may disagree with the design choices of the Swift language creators, but their belief is that those design choices result in better software at the end.
+[^2]: Swift uses an optimized reference counting instead of a tracing garbage collector which results in significantly less memory used and also makes a Swift program deterministic, avoiding the non-reproducibility of some errors you might encounter when using a tracing garbage collector. Swift might even be used for "close to the metal" situations.
+
+[^3]: You may disagree with the design choices of the Swift language creators, but their belief is that those design choices result in better software at the end.
 
 This is an overview of “dangerous” operations or situations which could cause a Swift program to crash, in comparison to Java and C#. (Note that even if your program does not crash, your program still might do unexpected things e.g. because of an unnoticed overflow of a number value.)
 
