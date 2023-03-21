@@ -116,7 +116,7 @@ Unless you set "workbench.editor.enablePreview": false, a file only simply click
 - **Documentation in code** according to [DocC](https://www.swift.org/documentation/docc/)
 - for executing the **unit tests** of a Swift package, use the test icon in Visual Studio Code (on the left) or in the command line e.g. `swift test --parallel --xunit-output test-log.xml` (as of early 2023, the `--parallel` argument is necessary for `--xunit-output` to work)
 - consider the **platform-specific hints** in the section "Platforms guide"
-- consider the section below about _Comparing Swift against Java and C# regarding “problematic” events_
+- consider the section below about comparing Swift against Java and C# regarding **“problematic” events**
 
 ## Versioning of dependent packages
 
