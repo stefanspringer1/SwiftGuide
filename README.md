@@ -175,6 +175,8 @@ This is an overview of “dangerous” operations or situations which could caus
 
 Details:
 
+“&#9760;” denotes a “dangerous” Swift operation in the following table.
+
 |Event | Java  | C# | Swift|
 |-------- | -------- | --------| --------|
 | problem caused by virtual machine errors or compiler errors | uncatchable[^4] | uncatchable | uncatchable |
@@ -200,5 +202,4 @@ Details:
 
 [^8]: Index access is generally to be replaced with other methods; avoiding such errors by the use of dependent types is currently not possible in any of the systems mentioned; with Swift, index access can be made an unsafe[^9] operation using a compiler flag.
 
-[^9]: Definition: “unsafe” operations have an undefined behavior for some inputs, example: pointer arithmetic<br/>
-&#9760;: “dangerous” Swift operation.
+[^9]: Definition: “unsafe” operations have an undefined behavior for some inputs, example: pointer arithmetic.
