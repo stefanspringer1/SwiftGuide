@@ -182,17 +182,18 @@ Details:
 | excessive “memory hunger” while enough memory on the system (or paging) | uncatchable crash\*\* | uncatchable | uncatchable, no crash |
 | stack overflow | uncatchable | uncatchable | uncatchable |
 | explicitly thrown exception | handling of a “checked” exception is enforced by the compiler, but not of an “unchecked” exception (results in a crash if unhandled) | handling of a “checked” exception is enforced by the compiler, but not of an “unchecked” exception (results in a crash if unhandled) | there are only “checked” exceptions |
-| null pointer exception | unchecked Exception, but catchable | unchecked Exception, but catchable | only possible if non-null assumption is explicitly enforced (“forced unwrapping” of an optional) &#9760;, then uncatchable |
-| floating point division by 0 | no error (result: infinite) | no error (result: infinite) | no error (result: infinity)\*\*\* |
+| null pointer exception | unchecked Exception, but catchable | unchecked Exception, but catchable | only possible if non-null assumption is explicitly enforced (“forced unwrapping” of an optional) &#9760;\*\*\*, then uncatchable |
+| floating point division by 0 | no error (result: infinite) | no error (result: infinite) | no error (result: infinity)\*\*\*\* |
 | integer division by 0 | catchable (unchecked) | catchable (unchecked) | uncatchable &#9760; |
-| number over-/underflow | no error (operators are “overflow operators”) | no error (operators are “overflow operators”) | uncatchable error &#9760;, but overflow operators (with prefix "\&") and controlled operations (e.g. `addingReportingOverflow`) available\*\*\* |
-| array index not allowed\*\*\*\* | catchable (unchecked) | catchable (unchecked) | cannot be caught &#9760; (same for any `Collection`) |
+| number over-/underflow | no error (operators are “overflow operators”) | no error (operators are “overflow operators”) | uncatchable error &#9760;, but overflow operators (with prefix "\&") and controlled operations (e.g. `addingReportingOverflow`) available\*\*\*\* |
+| array index not allowed\*\*\*\*\* | catchable (unchecked) | catchable (unchecked) | cannot be caught &#9760; (same for any `Collection`) |
 | problems analogous to the array index problem caused by poorly formulated APIs | yes, even as unchecked exceptions, but catchable | yes, even as unchecked exceptions, but catchable | in general not present (corresponding operations return optional values) |
-| unsafe\*\*\*\*\* operations | special case | special case| corresponding constructions and functions are easily recognizable as unsafe &#9760; by naming conventions (e.g. `UnsafeMutableRawPointer`), problems cannot be caught |
+| unsafe\*\*\*\*\*\* operations | special case | special case| corresponding constructions and functions are easily recognizable as unsafe &#9760; by naming conventions (e.g. `UnsafeMutableRawPointer`), problems cannot be caught |
 
 \*: “catchable” means that a crash can be prevented using `try`/`catch` (or in Swift: `do`/`catch`)<br/>
 \*\*: “crash” can mean the termination of the program run by a virtual machine with a corresponding message; in any case, the program is aborted<br/>
-\*\*\*: behavior regarding arithmetic can additionally be changed using compiler flags (this may result in IEEE conformity being broken)<br/>
-\*\*\*\*: index access is generally to be replaced with other methods; avoiding such errors by the use of dependent types is currently not possible in any of the systems mentioned; with Swift, index access can be made an unsafe\*\*\*\*\* operation using a compiler flag<br/>
+\*\*\*: force-unwrapping an optional might be a sign that the code is mal-constructed, but there are sensible uses like implicitly unwrapped optional property [for inhertance reasons](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/automaticreferencecounting#Unowned-References-and-Implicitly-Unwrapped-Optional-Properties)
+\*\*\*\*: behavior regarding arithmetic can additionally be changed using compiler flags (this may result in IEEE conformity being broken)<br/>
+\*\*\*\*\*: index access is generally to be replaced with other methods; avoiding such errors by the use of dependent types is currently not possible in any of the systems mentioned; with Swift, index access can be made an unsafe\*\*\*\*\* operation using a compiler flag<br/>
 \*\*\*\*\*: definition: “unsafe” operations have an undefined behavior for some inputs, example: pointer arithmetic<br/>
 &#9760;: “dangerous” Swift operation
