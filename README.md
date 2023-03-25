@@ -190,15 +190,15 @@ Details:
 | problems analogous to the array index problem caused by poorly formulated APIs | yes, even as unchecked exceptions, but catchable | yes, even as unchecked exceptions, but catchable | in general not present (corresponding operations return optional values) |
 | unsafe[^9] operations | special case | special case| corresponding constructions and functions are easily recognizable as unsafe &#9760; by naming conventions (e.g. `UnsafeMutableRawPointer`), problems cannot be caught |
 
-[^4]: “catchable” means that a crash can be prevented using `try`/`catch` (or in Swift: `do`/`catch`)
+[^4]: “Catchable” means that a crash can be prevented using `try`/`catch` (or in Swift: `do`/`catch`).
 
-[^5]: “crash” can mean the termination of the program run by a virtual machine with a corresponding message; in any case, the program is aborted
+[^5]: “Crash” can mean the termination of the program run by a virtual machine with a corresponding message; in any case, the program is aborted.
 
-[^6]: force-unwrapping an optional might be a sign that the code is mal-constructed, but there are sensible uses like implicitly unwrapped optional property [for inhertance reasons](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/automaticreferencecounting#Unowned-References-and-Implicitly-Unwrapped-Optional-Properties)
+[^6]: Force-unwrapping an optional might be a sign that the code is mal-constructed, but there are sensible uses like implicitly unwrapped optional property [for inhertance reasons](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/automaticreferencecounting#Unowned-References-and-Implicitly-Unwrapped-Optional-Properties).
 
-[^7]: behavior regarding arithmetic can additionally be changed using compiler flags (this may result in IEEE conformity being broken)
+[^7]: Behavior regarding arithmetic can additionally be changed using compiler flags (this may result in IEEE conformity being broken).
 
-[^8]: index access is generally to be replaced with other methods; avoiding such errors by the use of dependent types is currently not possible in any of the systems mentioned; with Swift, index access can be made an unsafe[^9] operation using a compiler flag
+[^8]: Index access is generally to be replaced with other methods; avoiding such errors by the use of dependent types is currently not possible in any of the systems mentioned; with Swift, index access can be made an unsafe[^9] operation using a compiler flag.
 
-[^9]: definition: “unsafe” operations have an undefined behavior for some inputs, example: pointer arithmetic<br/>
-&#9760;: “dangerous” Swift operation
+[^9]: Definition: “unsafe” operations have an undefined behavior for some inputs, example: pointer arithmetic<br/>
+&#9760;: “dangerous” Swift operation.
