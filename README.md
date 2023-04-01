@@ -62,7 +62,7 @@ _Answer:_ This is due to the dependency of some necessary components (the Window
 
 _Question 2:_ Why isn't this necessary for other natively compiling languages like Rust or Go, but for Swift?
 
-_Answer:_ The special thing about Swift on Windows is that Swift is implemented as a language with equal rights to C++ etc. so to speak, with direct access to all Windows libraries. The Swift runtime and standard library are implemented using direct calls into the Windows APIs, not emulating things like process startup, allowing a more "bare metal" environment compared to other environments. Swift on Windows is therefore a "true" native solution for Windows programming. This kind of system integration does not exist with Rust and Go.
+_Answer:_ The special thing about Swift on Windows is that Swift is implemented as a language with "equal rights to C++" so to speak, with direct access to all Windows libraries. The Swift runtime and standard library are implemented using direct calls into the Windows APIs, not emulating things like process startup, allowing a more "bare metal" environment compared to other environments. Swift on Windows is therefore a "true" native solution for Windows programming. This kind of system integration does not exist with Rust and Go.
 
 #### Distribution of compiled programs under Windows
 
