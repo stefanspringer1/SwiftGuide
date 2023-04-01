@@ -203,4 +203,4 @@ Details:
 
 [^8]: Index access is generally to be replaced with other methods; avoiding such errors by the use of dependent types is currently not possible in any of the systems mentioned; with Swift, index access can be made an unsafe[^9] operation using a compiler flag.
 
-[^9]: Definition: “unsafe” operations have an undefined behavior for some inputs, example: pointer arithmetic.
+[^9]: Definition: “unsafe” operations have an undefined behavior for some inputs, example: "pointer arithmetic".
