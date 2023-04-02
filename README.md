@@ -94,6 +94,8 @@ _Answer:_ The special thing about Swift on Windows is that Swift is implemented 
 
 Set Editor › Inlay Hints: offUnlessPressed.
 
+_Without this setting you see a lot of type hints which makes the Swift code look very ugly at some places._
+
 ### Detect encoding
 
 Set "files.autoGuessEncoding":true.
