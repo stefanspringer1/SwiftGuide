@@ -6,6 +6,22 @@ _All instructions and information are without any guarantee._
 
 ## Platforms guide
 
+### macOS
+
+- install [Xcode](https://developer.apple.com/xcode)
+- a credential manager must be activated for Git if packages from private repositories have to be pulled from the Swift Package Manager (should not be explicitly necessary within Xcode)
+- other IDE: see Windows
+- first steps with Swift: see Windows
+- the Swift runtime (Swift standard libraries) is part of the operating system on Apple platforms (this is possible because of the stable ABI already implemented there), so new features (language or standard libraries) may only be available there with new operating system versions and you sometimes have to use [`#available` annotations](https://www.avanderlee.com/swift/available-deprecated-renamed/) (for individual components, see also [the official Swift documentation](https ://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes/)) or (in the configuration for the package manager, for the whole package) with the [`platforms` flag ](https://github.com/apple/swift-package-manager/blob/main/Documentation/PackageDescription.md#package) (note: restrictions according to `platforms` only for platforms mentioned there)
+
+### Linux
+
+- see https://www.swift.org/getting-started or [Docker-Images](https://hub.docker.com/_/swift/?tab=tags)
+- a credential manager must be activated for Git if the Swift Package Manager needs to pull packages from private repositories
+- **IDE** (integrated development environment): **Visual Studio Code** with the [Swift extension](https://marketplace.visualstudio.com/items?itemName=sswg.swift-lang), useful settings for Visual Studio Code see in the section "Suggested settings for Visual Studio Code" below; see also [VS Code Swift extension lesser known features](https://opticalaberration.com/2022/11/vscode-features.html), there e.g. "Local editing of packages" (important for the simultaneous further development of dependent packages)
+- static linking via addition to the build command `-Xswiftc -static-executable` (everything) or `-Xswiftc -static-stdlib` (Swift standard libraries only)
+- note the license questions mentioned under "Windows".
+
 ### Windows
 
 **tl;tr** The core requirements for developing Swift programs on Windows are:
@@ -28,7 +44,7 @@ _All instructions and information are without any guarantee._
 - note that the installation of the actual **Swift Toolchain** requires admin rights, especially _because additions are made to the Visual Studio installation;_ other installation parts are installed to `%SystemDrive%\Library` and to `%PROGRAMFILES%\swift`, the paths corresponding to `%PROGRAMFILES%\swift\icu-69.1\usr\bin`, `%PROGRAMFILES%\swift\runtime-development\usr\bin`, and `%SystemDrive%\Developer\Toolchains\unknown-Asserts-development.xctoolchain\usr\bin` are added to the PATH environment variable (in the future probably no insertion into the Visual Studio installation necessary any more cf. https://github.com/apple/swift/pull/63887)
 - **after an update of Visual Studio** it might be necessary to repair the files copied into the Visual Studio installation, using the installed toolchain, see [how to repair an installation](https://support.microsoft.com/en-us/windows/repair-apps-and-programs-in-windows-e90eefe4-d0a2-7c1b-dd59-949a9030f317)
 - you can build **your own installation process for the toolchain** as a replacement for the official toolchain installer by using the directories as installed by the installer, setting the appropriate paths, and copying some files into the Visual Studio installation as decribed below _(this copying of files into the Visual Studio installation does not have to be repeated for newer versions of Swift)_
-- **IDE** (integrated development environment): **Visual Studio Code** with the [Swift extension](https://marketplace.visualstudio.com/items?itemName=sswg.swift-lang), useful settings for Visual Studio Code see in the section "Suggested settings for Visual Studio Code" below; see also [VS Code Swift extension lesser known features](https://opticalaberration.com/2022/11/vscode-features.html), there e.g. "Local editing of packages" (important for the simultaneous further development of dependent packages); _There should only be one Visual Studio installation (as of early 2023),_ and important tools such as Git must also be accessible outside of Visual Studio's "x64 Native Tools Command Prompt"
+- **IDE:** see Linux; _there should only be one Visual Studio installation (as of early 2023),_ and important tools such as Git must also be accessible outside of Visual Studio's "x64 Native Tools Command Prompt"
 - you should **avoid PowerShell on Windows** for Swift development (or also in the general case), especially If you are working with a CI pipeline, because there are some hints that [this might be problematic](https://github.com/orgs/community/discussions/26933) (PowerShell is the default for GitHub Windows CI pipelines, configure the pipeline to use `cmd` or maybe even better `bash`, `bash` is available for GitHub Windows CI pipelines)
 - for **profiling purposes,** the appropriate tools of the Xcode installation in macOS are currently to be used (however, profiling results can vary in principle depending on the platform)
 
@@ -70,23 +86,6 @@ _Answer:_ The special thing about Swift on Windows is that Swift is implemented 
 - these **DLLs** are 1) installed in `%PROGRAMFILES%\swift`, 2) the Visual Studio C++ Redistributables in `[VisualStudioFolder]\VC\redist\...\x64\*.CRT`, cf. for the latter [Microsoft's documentation](https://learn.microsoft.com/en-us/visualstudio/releases/2022/redistribution#visual-c-runtime-files); the versions of the DLLs must match those with which the Swift program was compiled; Point "2)" can be omitted and instead a corresponding [Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170)- installation are assumed
 - these DLLs must be placed next to the executable or the relevant directories must be named in the PATH environment variable (different versions of the same DLLs in PATH should be avoided)
 - for the DLLs included with such a program, reference should be made to the corresponding **licenses** or analogous documentation, if necessary, or a corresponding license (recommended: named and documented according to the licensed component) must be enclosed (the latter could e.g. for the Apache 2.0 license, as long as no static linking is done, note the runtime library exception of the Apache 2.0 license); please note a) [the Apache 2.0 license](https://github.com/apple/swift/blob/main/LICENSE.txt ) for [Swift](https://github.com/apple/swift) , b) [the Unicode License](https://www.unicode.org/license.txt) for the [International Components for Unicode “ICU”](https://icu.unicode.org), c) the [Documentation from Microsoft](https://learn.microsoft.com/en-us/visualstudio/releases/2022/redistribution#visual-c-runtime-files) on the Visual C++ Runtime Files; Point "c)" can be omitted if (see above) the installation of the corresponding Visual C++ Redistributables is required
-
-### Linux
-
-- see https://www.swift.org/getting-started or [Docker-Images](https://hub.docker.com/_/swift/?tab=tags)
-- a credential manager must be activated for Git if the Swift Package Manager needs to pull packages from private repositories
-- IDE: like Windows
-- first steps with Swift: see Windows
-- static linking via addition to the build command `-Xswiftc -static-executable` (everything) or `-Xswiftc -static-stdlib` (Swift standard libraries only)
-- note the license questions mentioned under "Windows".
-
-### macOS
-
-- install [Xcode](https://developer.apple.com/xcode)
-- a credential manager must be activated for Git if packages from private repositories have to be pulled from the Swift Package Manager (should not be explicitly necessary within Xcode)
-- other IDE: see Windows
-- first steps with Swift: see Windows
-- the Swift runtime (Swift standard libraries) is part of the operating system on Apple platforms (this is possible because of the stable ABI already implemented there), so new features (language or standard libraries) may only be available there with new operating system versions and you sometimes have to use [`#available` annotations](https://www.avanderlee.com/swift/available-deprecated-renamed/) (for individual components, see also [the official Swift documentation](https ://docs.swift.org/swift-book/documentation/the-swift-programming-language/attributes/)) or (in the configuration for the package manager, for the whole package) with the [`platforms` flag ](https://github.com/apple/swift-package-manager/blob/main/Documentation/PackageDescription.md#package) (note: restrictions according to `platforms` only for platforms mentioned there)
 
 ## Suggested settings and tips for Visual Studio Code
 
