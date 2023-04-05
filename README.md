@@ -106,7 +106,7 @@ Unless you set "workbench.editor.enablePreview": false, a file only simply click
 
 ## Getting started with Swift
 
-Please also consult the official [documentation overview](https://www.swift.org/documentation/).
+Please also consult the official [documentation overview](https://www.swift.org/documentation/) and the "open source efforts" section on [swift.org](https://www.swift.org).
 
 - **minimal Swift program:** Creation of a new executable Swift package via `swift package init --type executable` within a directory newly created for the package, a possible minimal program is already created or alternatively consists of the code `print("Hello")` within a file `main.swift`, for further functionalities in general. at least `import Foundation`
 - on a Mac or iPad, you might also use **Swift Playgrounds** to play around with the language (see [there](https://www.apple.com/swift/playgrounds))
