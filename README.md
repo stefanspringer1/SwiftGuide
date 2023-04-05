@@ -108,7 +108,7 @@ Unless you set "workbench.editor.enablePreview": false, a file only simply click
 
 Please also consult the official [documentation overview](https://www.swift.org/documentation/) and the "open source efforts" section on [swift.org](https://www.swift.org).
 
-- **minimal Swift package:** Creation of a new executable Swift package via `swift package init --type executable` (without the `--type` argument, a library package is created) within a directory newly created for the package, a possible minimal program is already created or alternatively consists of the code `print("Hello")` within a file `main.swift`, for further functionalities in general. at least `import Foundation`
+- **minimal Swift package:** creation of a new executable Swift package via `swift package init --type executable` (without the `--type` argument, a library package is created) within a directory newly created for the package, a possible minimal program is already created or alternatively consists of the code `print("Hello")` within a file `main.swift`, for further functionalities in general. at least `import Foundation`
 - you also compile **a single Swift file** via `swiftc` or [use it as a script](https://rderik.com/blog/using-swift-for-scripting/)
 - on a Mac or iPad, you might also use **Swift Playgrounds** to play around with the language (see [there](https://www.apple.com/swift/playgrounds))
 - there is also the **REPL** ("[Read–eval–print loop](https://en.wikipedia.org/wiki/Read–eval–print_loop)”); to start it under Windows, you need to provide some extra arguments (as of early 2023), cf. https://www.swift.org/getting-started
