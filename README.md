@@ -122,7 +122,7 @@ Please also consult the official [documentation overview](https://www.swift.org/
 - you can **develop for Linux on a non-Linux system** in [Visual Studio Code Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers), see [the description of how this works with Swift](https://github.com/swift-server/vscode-swift/blob/main/docs/remote-dev.md)
 - **documentation in code** according to [DocC](https://www.swift.org/documentation/docc/); include the `--include-extended-types` option to also document extensions to types from other modules (`swift package generate-documentation --include-extended-types`)
 - for executing the **unit tests** of a Swift package, use the test icon in Visual Studio Code (on the left) or in the command line e.g. `swift test --parallel --xunit-output test-log.xml` (as of early 2023, the `--parallel` argument is necessary for `--xunit-output` to work)
-- consider the **platform-specific hints** in the section "Platforms guide"
+- consider the **platform-specific hints** in the section "Platforms guide" above
 - consider the section below about comparing Swift against Java and C# regarding **“problematic” events**
 - for **benchmarking,** you might consider [this package](https://github.com/ordo-one/package-benchmark)
 
