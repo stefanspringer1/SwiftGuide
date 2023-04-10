@@ -121,6 +121,7 @@ Please also consult the official [documentation overview](https://www.swift.org/
 - for executing the **unit tests** of a Swift package, use the tests tab in Xcode or the test icon in Visual Studio Code (on the left) or in the command line e.g. `swift test --parallel --xunit-output test-log.xml` (as of early 2023, the `--parallel` argument is necessary for `--xunit-output` to work)
 - also consult the **platform-specific hints** in the section "Platforms guide" above, where amongst other things the `#available` annotations and the `platforms` flag are mentioned
 - you may also consult the section below about comparing Swift against Java and C# regarding **“problematic” events**
+- for optimizations see "[Writing High-Performance Swift Code](https://github.com/apple/swift/blob/main/docs/OptimizationTips.rst)"
 - for **benchmarking,** you might consider [this package](https://github.com/ordo-one/package-benchmark)
 
 ## Versioning of dependent packages
