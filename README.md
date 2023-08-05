@@ -28,7 +28,7 @@ _All instructions and information are without any guarantee._
 - **Visual Studio Installation** for enabling native development against the Windows SDK
 - **Developer mode** to allow symbolic links
 - **Admin rights** for installing the actual Swift toolchain
-- **Visual Studio Code** as IDE
+- **Visual Studio Code** as IDE, see the section on Linux above
 
 #### Setup and platform-specific hints
 
