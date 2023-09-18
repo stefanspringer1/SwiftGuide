@@ -18,7 +18,7 @@ _All instructions and information are without any guarantee._
 - see https://www.swift.org/getting-started or [Docker-Images](https://hub.docker.com/_/swift/?tab=tags)
 - a credential manager must be activated for Git if the Swift Package Manager needs to pull packages from private repositories
 - **IDE** (integrated development environment): **Visual Studio Code** with the [Swift extension](https://marketplace.visualstudio.com/items?itemName=sswg.swift-lang), useful settings for Visual Studio Code see in the section "Suggested settings for Visual Studio Code" below; see [this introduction](https://www.timc.dev/posts/editing-pacakges-vscode/) and also [VS Code Swift extension lesser known features](https://opticalaberration.com/2022/11/vscode-features.html), there e.g. "Local editing of packages" (important for the simultaneous further development of dependent packages)
-- static linking via addition to the build command `-Xswiftc -static-executable` (everything) or `-Xswiftc -static-stdlib` (Swift standard libraries only)
+- static linking via addition to the build command `--static-swift-stdlib`, compare the help output (`swift build --help`); the _compiler_ setting `-Xswiftc -static-executable` (link everything) or `-Xswiftc -static-stdlib` (Swift standard libraries only) that you could add to the build command should be seen as unstable options
 - note the license questions mentioned under "Windows"
 
 ### Windows
