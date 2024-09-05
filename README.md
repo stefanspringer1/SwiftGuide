@@ -173,7 +173,7 @@ _See also the relevant Swift Package Manager documentation: ["Building Swift Pac
 
 [^3]: You may disagree with the design choices of the Swift language creators, but their belief is that those design choices result in better software at the end.
 
-Alsocf. [Swift Concurrency Manifesto / Part 3: Reliability through fault isolation](https://gist.github.com/lattner/31ed37682ef1576b16bca1432ea9f782#part-3-reliability-through-fault-isolation).
+Also cf. [Swift Concurrency Manifesto / Part 3: Reliability through fault isolation](https://gist.github.com/lattner/31ed37682ef1576b16bca1432ea9f782#part-3-reliability-through-fault-isolation).
 
 This is an overview of “dangerous” operations or situations which could cause a Swift program to crash, in comparison to Java and C#. (Note that even if your program does not crash, your program still might do unexpected things e.g. because of an unnoticed overflow of a number value.)
 
